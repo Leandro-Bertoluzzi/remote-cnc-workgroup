@@ -1,0 +1,11 @@
+server {
+    listen      80;
+    listen      [::]:80;
+    # It can be your domain (example.com), your server IP address or just "localhost"
+    server_name <YOUR_IP_ADDRESS>;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+    }
+}

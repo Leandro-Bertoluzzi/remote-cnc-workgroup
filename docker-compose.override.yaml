@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  nextjs:
+    container_name: remote-cnc-nextjs
+    image: node:16
+    working_dir: /srv/app
+    entrypoint: "/bin/bash"
+    command: "-c \"if [ ! -d \"node_modules\" ]; then npm i; fi; npm run dev\""
+    ports:
+      - 3000:3000
+    volumes:
+      - ./app:/srv/app
+    networks:
+      - frontend
+  
+  api:
+    volumes:
+      - ./api/database:/usr/src/api/database
+  
+  mysql:
+    ports:
+      - 3306:3306

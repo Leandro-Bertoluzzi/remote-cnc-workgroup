@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    container_name: container-app
+    restart: always
+    ports:
+      - "3000:80"
+    networks:
+      - frontend
+
+  api:
+    restart: always
+  
+  mysql:
+    restart: always

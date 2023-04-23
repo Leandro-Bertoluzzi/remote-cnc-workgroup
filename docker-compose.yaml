@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: remote-cnc-api
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    image: remote-cnc-api-image
+    depends_on:
+      - mysql
+    env_file:
+      - api/.env
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "8000:5000"
+  
+  mysql:
+    container_name: remote-cnc-mysql
+    image: mysql:5.7
+    env_file:
+      - mysql/.env
+    networks:
+      - backend
+    volumes:
+      - mysql-datavolume:/var/lib/mysql
+  
+  phpmyadmin:
+    container_name: remote-cnc-phpmyadmin
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    environment:
+      - PMA_HOST=remote-cnc-mysql
+      - PMA_PORT=3306
+    networks:
+      - backend
+    ports:
+      - "8080:80"
+    volumes:
+      - /sessions
+  
+networks:
+  frontend:
+  backend:
+  
+volumes:
+  mysql-datavolume:
