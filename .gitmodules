@@ -1,3 +1,6 @@
 [submodule "app"]
 	path = app
 	url = git@github.com:Leandro-Bertoluzzi/remote-cnc-webapp.git
+[submodule "api"]
+	path = api
+	url = git@github.com:Leandro-Bertoluzzi/remote-cnc-api.git
