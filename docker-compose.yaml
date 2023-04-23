@@ -21,7 +21,7 @@ services:
     container_name: remote-cnc-mysql
     image: mysql:5.7
     env_file:
-      - mysql/.env
+      - api/mysql/.env
     networks:
       - backend
     volumes:
