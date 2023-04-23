@@ -1,13 +1,13 @@
 <h1 align="center">Remote CNC manager</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Leandro-Bertoluzzi/remote-cnc?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/Leandro-Bertoluzzi/remote-cnc-workgroup?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Leandro-Bertoluzzi/remote-cnc?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/Leandro-Bertoluzzi/remote-cnc-workgroup?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro-Bertoluzzi/remote-cnc?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/Leandro-Bertoluzzi/remote-cnc-workgroup?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/Leandro-Bertoluzzi/remote-cnc?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/Leandro-Bertoluzzi/remote-cnc-workgroup?color=56BEB8">
 </p>
 
 <!-- Status -->
@@ -66,10 +66,10 @@ Alternatively, if you have [Docker](https://www.docker.com/) installed, you can 
 
 ```bash
 # Clone this project
-$ git clone https://github.com/Leandro-Bertoluzzi/remote-cnc
+$ git clone --recurse-submodules https://github.com/Leandro-Bertoluzzi/remote-cnc-workgroup
 
 # Access
-$ cd remote-cnc
+$ cd remote-cnc-workgroup
 
 # Run the project
 $ docker-compose up
