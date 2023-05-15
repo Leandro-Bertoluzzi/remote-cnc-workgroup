@@ -12,14 +12,14 @@
 
 <!-- Status -->
 
-<h4 align="center"> 
+<h4 align="center">
 	🚧 Remote CNC manager 🚀 Under construction...  🚧
-</h4> 
+</h4>
 
 <hr>
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#dart-about">About</a> &#xa0; | &#xa0;
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
   <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
@@ -62,6 +62,8 @@ Before starting :checkered_flag:, you need to have installed:
 
 Alternatively, if you have [Docker](https://www.docker.com/) installed, you can build and run the whole application, both in development and production mode, without installing the aforementioned programs.
 
+More information about how to init your development environment [here](./docs/development.md).
+
 ## :checkered_flag: Starting ##
 
 ```bash
@@ -91,6 +93,8 @@ $ docker-compose -f docker-compose.yaml -f docker-compose.production.yaml up -d
 ```
 
 Also, take into account that you must update the environment variables.
+
+A more comprehensive guide about the deployment [here](./docs/deployment.md).
 
 ## :memo: License ##
 
