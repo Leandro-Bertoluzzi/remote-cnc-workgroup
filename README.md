@@ -37,7 +37,7 @@ Implementation of web app + API to remotely monitor and manage an Arduino-based 
 ## :sparkles: Features ##
 
 :heavy_check_mark: REST API\
-:heavy_check_mark: MySQL database management\
+:heavy_check_mark: SQL database management\
 :heavy_check_mark: Real time monitoring of CNC status
 
 ## :rocket: Technologies ##
@@ -46,8 +46,8 @@ The following tools were used in this project:
 
 - Web app, frontend: [Next.js](https://nextjs.org/) with [Typescript](https://www.typescriptlang.org/)
 - Containerization: [Docker](https://www.docker.com/)
-- API: [Flask](https://flask.palletsprojects.com/)
-- Database: [Mysql](https://www.mysql.com/)
+- API: [FastAPI](https://fastapi.tiangolo.com/)
+- Database: [PostgreSQL](https://www.postgresql.org/)
 - ORM: [SQLAlchemy](https://www.sqlalchemy.org/)
 - DB migrations: [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 - Server, reverse proxy: [Nginx](https://www.nginx.com/)
@@ -58,7 +58,7 @@ Before starting :checkered_flag:, you need to have installed:
 - [Node](https://nodejs.org/en/) to run the Next.js app in developer mode and generate the frontend pages for production,
 - [Python](https://www.python.org/) to run the backend,
 - [Nginx](https://www.nginx.com/) to configure a production server and
-- [Mysql](https://www.mysql.com/) to manage the database.
+- [PostgreSQL](https://www.postgresql.org/)
 
 Alternatively, if you have [Docker](https://www.docker.com/) installed, you can build and run the whole application, both in development and production mode, without installing the aforementioned programs.
 
@@ -78,7 +78,7 @@ $ docker-compose up
 
 # You can access the web app in <http://localhost:3000>
 # The API will initialize in <http://localhost:8000>
-# You can access PHPMyAdmin through <http://localhost:8080>
+# You can access adminer through <http://localhost:8080>
 ```
 
 ## :wrench: Running tests ##

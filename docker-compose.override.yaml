@@ -13,11 +13,11 @@ services:
       - ./app:/srv/app
     networks:
       - frontend
-  
+
   api:
     volumes:
       - ./api/database:/usr/src/api/database
-  
-  mysql:
+
+  postgresql:
     ports:
-      - 3306:3306
+      - 5432:5432
