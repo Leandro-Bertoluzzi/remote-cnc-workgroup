@@ -3,16 +3,16 @@ version: "3.8"
 services:
   app:
     build:
-      context: .
-      dockerfile: ./nginx/Dockerfile
-    container_name: container-app
-    restart: always
+      context: ./app
+      target: production
     ports:
       - "3000:80"
-    networks:
-      - frontend
+    restart: always
 
   api:
+    build:
+      context: ./api
+      target: production
     restart: always
 
   postgresql:

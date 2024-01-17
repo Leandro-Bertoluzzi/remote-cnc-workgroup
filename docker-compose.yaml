@@ -3,19 +3,17 @@ version: "3.8"
 services:
   api:
     container_name: remote-cnc-api
-    build:
-      context: .
-      dockerfile: ./api/Dockerfile
     image: remote-cnc-api-image
     depends_on:
-      - mysql
+      - postgresql
     env_file:
       - api/.env
-    networks:
-      - frontend
-      - backend
     ports:
       - "8000:8000"
+
+  app:
+    container_name: remote-cnc-app
+    image: remote-cnc-app-image
 
   postgresql:
     image: postgres:16.1-alpine
@@ -23,8 +21,6 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
       - POSTGRES_DB=${DB_NAME}
-    networks:
-      - backend
     volumes:
       - postgres-datavolume:/var/lib/postgresql/data
     container_name: remote-cnc-postgresql
@@ -33,15 +29,9 @@ services:
     image: adminer:4.8.1
     depends_on:
       - postgresql
-    networks:
-      - backend
     ports:
       - "8080:8080"
     container_name: remote-cnc-adminer
-
-networks:
-  frontend:
-  backend:
 
 volumes:
   postgres-datavolume:

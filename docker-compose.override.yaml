@@ -1,23 +1,33 @@
 version: "3.8"
 
 services:
-  nextjs:
-    container_name: remote-cnc-nextjs
-    image: node:16
-    working_dir: /srv/app
-    entrypoint: "/bin/bash"
-    command: "-c \"if [ ! -d \"node_modules\" ]; then npm i; fi; npm run dev\""
+  app:
+    build:
+      context: ./app
+      target: development
     ports:
       - 3000:3000
+    pull_policy: never
     volumes:
-      - ./app:/srv/app
-    networks:
-      - frontend
+      - ./app:/app
 
   api:
+    build:
+      context: ./api
+      target: development
     volumes:
-      - ./api/database:/usr/src/api/database
+      - ./api:/app
 
   postgresql:
     ports:
-      - 5432:5432
+      - ${DB_PORT}:5432
+
+  testdb:
+    image: postgres:16.1-alpine
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=cnc_db
+    ports:
+      - 5000:5432
+    container_name: remote-cnc-testdb
