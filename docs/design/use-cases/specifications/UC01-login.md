@@ -3,7 +3,7 @@
 | **Identificador**      | UC01 |
 | **Actores**      | Usuario |
 | **Precondición**   | El usuario tiene nombre y contraseña válidos.<br />El usuario tiene acceso al sistema. |
-| **Resultado**   | El usuario es autenticado y tiene acceso al sistema.<br />El usuario es redirigido a la página principal. |
+| **Resultado**   | El usuario es autenticado y tiene acceso al sistema.<br />El usuario es redirigido a la aplicación. |
 
 **Resumen:**
 Este caso de uso describe los pasos necesarios para que el usuario ingrese al sistema.
@@ -19,6 +19,14 @@ Este caso de uso describe los pasos necesarios para que el usuario ingrese al si
 | 6      | Cliquea el botón de "login". |  |
 | 7      |  | Verifica la identidad del usuario. |
 | 8      |  | Redirige a la página principal. |
+
+**Curso alternativos (es redirigido desde otra página):**
+
+| **N**      | **Acción realizada por actor** | **Acción realizada por el sistema** |
+| :---        | :---        | :---        |
+| 1      | Es redirigido a la página de autenticación (login) desde otra de las rutas. |  |
+| ... | | |
+| 8      |  | Redirige a la página desde donde fue direccionado inicialmente. |
 
 **Curso alternativos (error de credenciales):**
 
