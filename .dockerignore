@@ -39,5 +39,15 @@ Dockerfile
 node_modules
 npm-debug.log
 
-# Next auto-generated files
+# Node test related files
+/coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Next.js auto-generated files
 .next
+
+# Vercel
+.vercel

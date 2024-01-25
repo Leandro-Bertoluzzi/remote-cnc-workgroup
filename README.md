@@ -109,8 +109,13 @@ $ docker exec -it remote-cnc-api make tests
 - Linter:
 
 ```bash
-# We run the command inside the container
 $ docker exec -it remote-cnc-app npm run lint:check
+```
+
+- Unit tests:
+
+```bash
+$ docker exec -it remote-cnc-app npm run test:unit
 ```
 
 ## :checkered_flag: Deployment
@@ -118,7 +123,6 @@ $ docker exec -it remote-cnc-app npm run lint:check
 In order to deploy the app, you must export it as a static site. To do so, you must run the following command in development mode:
 
 ```bash
-# We run the command inside the container
 $ docker exec -it remote-cnc-app npm run build
 ```
 
